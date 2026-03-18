@@ -89,7 +89,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="max-w-4xl mx-auto px-6 pt-28 md:pt-40 pb-24">
+      <section className="max-w-4xl mx-auto px-6 pt-36 md:pt-40 pb-24">
         <motion.div
           initial="hidden"
           animate="visible"
