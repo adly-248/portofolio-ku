@@ -3,6 +3,7 @@
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { TypeAnimation } from 'react-type-animation'
 
 export default function Home() {
   const { theme, setTheme } = useTheme()
@@ -87,8 +88,20 @@ export default function Home() {
             Halo, saya
           </motion.p>
           <motion.h1 variants={fadeUp} className="text-5xl font-bold mb-4 leading-tight">
-            Adly Febryan
-          </motion.h1>
+            <TypeAnimation
+                sequence={[
+                'Adly Febryan',
+                2000,
+                'Web Developer',
+                2000,
+                'Full-Stack Learner',
+                2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+            />
+            </motion.h1>
           <motion.p variants={fadeUp} className="text-xl text-gray-500 dark:text-gray-400 mb-8 max-w-xl">
             Siswa SMK produktif yang sedang menjalani PKL dengan semangat belajar tinggi,
             khususnya di bidang pengembangan web dan teknologi perangkat lunak.
