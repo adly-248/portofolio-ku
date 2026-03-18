@@ -66,7 +66,7 @@ export default function Home() {
         </nav>
 
       {/* Hero */}
-      <section className="max-w-4xl mx-auto px-6 pt-40 pb-24">
+      <section className="max-w-4xl mx-auto px-6 pt-24 md:pt-40 pb-24">
         <p className="text-blue-500 font-medium mb-3 text-sm tracking-widest uppercase">Halo, saya</p>
         <h1 className="text-5xl font-bold mb-4 leading-tight">Adly Febryan</h1>
         <p className="text-xl text-gray-500 dark:text-gray-400 mb-8 max-w-xl">
