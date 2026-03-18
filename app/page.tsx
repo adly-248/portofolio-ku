@@ -63,7 +63,7 @@ export default function Home() {
 
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-700 shadow-sm transition-colors duration-300">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-4xl mx-auto px-6 py-3 flex justify-between items-center">
           <span className="font-bold text-lg tracking-tight">
             Adly<span className="text-blue-500">.</span>
           </span>
