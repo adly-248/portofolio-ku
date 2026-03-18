@@ -23,6 +23,16 @@ export default function Home() {
     visible: { transition: { staggerChildren: 0.15 } },
   }
 
+  const experiences = [
+  {
+    company: "PT Pandawa Yogaswara Abadi Teknologi",
+    position: "Implementor",
+    period: "November 2025 — Sekarang",
+    description:
+      "Membuat form berbasis HTML, Bootstrap, dan Jasper Report untuk keperluan sistem informasi rumah sakit. Terlibat langsung dalam proses implementasi software di lingkungan profesional.",
+  },
+  ]
+  
   const skills = [
     { name: "Laravel", level: 75 },
     { name: "MySQL", level: 70 },
@@ -61,6 +71,7 @@ export default function Home() {
             <div className="flex gap-3 md:gap-6 text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium">
               <a href="#about" className="hover:text-blue-500 transition-colors">About</a>
               <a href="#skills" className="hover:text-blue-500 transition-colors">Skills</a>
+              <a href="#experience" className="hover:text-blue-500 transition-colors">Experience</a>
               <a href="#projects" className="hover:text-blue-500 transition-colors">Projects</a>
               <a href="#contact" className="hover:text-blue-500 transition-colors">Contact</a>
             </div>
@@ -211,6 +222,43 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Experience */}
+        <section id="experience" className="py-24">
+        <div className="max-w-4xl mx-auto px-6">
+            <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            >
+            <motion.h2 variants={fadeUp} className="text-3xl font-bold mb-2">Experience</motion.h2>
+            <motion.div variants={fadeUp} className="w-12 h-1 bg-blue-500 mb-8 rounded"></motion.div>
+            <div className="space-y-6">
+                {experiences.map((exp) => (
+                <motion.div
+                    key={exp.company}
+                    variants={fadeUp}
+                    className="border-l-4 border-blue-500 pl-6 py-2"
+                >
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                    <div>
+                        <h3 className="font-bold text-lg">{exp.position}</h3>
+                        <p className="text-blue-500 font-medium text-sm">{exp.company}</p>
+                    </div>
+                    <span className="text-xs text-gray-400 dark:text-gray-500 mt-1 md:mt-0 bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded-full">
+                        {exp.period}
+                    </span>
+                    </div>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                    {exp.description}
+                    </p>
+                </motion.div>
+                ))}
+            </div>
+            </motion.div>
+        </div>
+        </section>
 
       {/* Projects */}
       <section id="projects" className="bg-gray-50 dark:bg-slate-800 py-24 transition-colors duration-300">
