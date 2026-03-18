@@ -40,31 +40,30 @@ export default function Home() {
     <main className="min-h-screen bg-white dark:bg-slate-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-700 shadow-sm transition-colors duration-300">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-700 shadow-sm transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <span className="font-bold text-lg tracking-tight">
+            <span className="font-bold text-lg tracking-tight">
             Adly<span className="text-blue-500">.</span>
-          </span>
-          <div className="flex items-center gap-6">
-            <div className="flex gap-6 text-sm text-gray-500 dark:text-gray-400 font-medium">
-              <a href="#about" className="hover:text-blue-500 transition-colors">About</a>
-              <a href="#skills" className="hover:text-blue-500 transition-colors">Skills</a>
-              <a href="#projects" className="hover:text-blue-500 transition-colors">Projects</a>
-              <a href="#contact" className="hover:text-blue-500 transition-colors">Contact</a>
+            </span>
+            <div className="flex items-center gap-3 md:gap-6">
+            <div className="hidden md:flex gap-6 text-sm text-gray-500 dark:text-gray-400 font-medium">
+                <a href="#about" className="hover:text-blue-500 transition-colors">About</a>
+                <a href="#skills" className="hover:text-blue-500 transition-colors">Skills</a>
+                <a href="#projects" className="hover:text-blue-500 transition-colors">Projects</a>
+                <a href="#contact" className="hover:text-blue-500 transition-colors">Contact</a>
             </div>
-            {/* Toggle Button */}
             {mounted && (
-              <button
+                <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 className="p-2 rounded-lg bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors"
                 aria-label="Toggle theme"
-              >
+                >
                 {theme === 'dark' ? '☀️' : '🌙'}
-              </button>
+                </button>
             )}
-          </div>
+            </div>
         </div>
-      </nav>
+        </nav>
 
       {/* Hero */}
       <section className="max-w-4xl mx-auto px-6 pt-40 pb-24">
