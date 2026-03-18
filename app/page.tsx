@@ -46,7 +46,7 @@ export default function Home() {
             Adly<span className="text-blue-500">.</span>
             </span>
             <div className="flex items-center gap-3 md:gap-6">
-            <div className="hidden md:flex gap-6 text-sm text-gray-500 dark:text-gray-400 font-medium">
+            <div className="flex gap-3 md:gap-6 text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium">
                 <a href="#about" className="hover:text-blue-500 transition-colors">About</a>
                 <a href="#skills" className="hover:text-blue-500 transition-colors">Skills</a>
                 <a href="#projects" className="hover:text-blue-500 transition-colors">Projects</a>
