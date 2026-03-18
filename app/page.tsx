@@ -14,6 +14,14 @@ export default function Home() {
     setMounted(true)
   }, [])
 
+  const [showTop, setShowTop] = useState(false)
+
+useEffect(() => {
+  const handleScroll = () => setShowTop(window.scrollY > 300)
+  window.addEventListener('scroll', handleScroll)
+  return () => window.removeEventListener('scroll', handleScroll)
+}, [])
+
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -373,6 +381,24 @@ export default function Home() {
       <footer className="border-t border-gray-100 dark:border-slate-700 py-6 text-center text-sm text-gray-400 dark:text-gray-500">
         © 2026 Adly Febryan. Made with Next.js & Tailwind CSS.
       </footer>
+
+      {/* Back to Top */}
+        <AnimatePresence>
+        {showTop && (
+            <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="fixed bottom-6 right-6 z-50 p-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg transition-colors"
+            aria-label="Back to top"
+            >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+            </motion.button>
+        )}
+        </AnimatePresence>
 
     </main>
   )
