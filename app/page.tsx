@@ -119,6 +119,7 @@ export default function Home() {
     { href: '#about', label: 'About' },
     { href: '#skills', label: 'Skills' },
     { href: '#experience', label: 'Experience' },
+    { href: '#certificates', label: 'Certificates' },
     { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' },
   ]
@@ -146,6 +147,64 @@ export default function Home() {
     { name: "HTML & CSS", level: 80 },
     { name: "Bootstrap", level: 70 },
     { name: "Node.js", level: 40 },
+    { name: "Python", level: 35 },
+  ]
+
+  const certificates = [
+    {
+      name: "AWS Cloud Practitioner Essentials",
+      issuer: "Amazon Web Services",
+      category: "Cloud",
+      color: "bg-orange-100 text-orange-600 dark:bg-orange-900 dark:text-orange-400",
+    },
+    {
+      name: "Job Roles in the Cloud",
+      issuer: "Amazon Web Services",
+      category: "Cloud",
+      color: "bg-orange-100 text-orange-600 dark:bg-orange-900 dark:text-orange-400",
+    },
+    {
+      name: "Getting Started with Cloud Acquisition",
+      issuer: "Amazon Web Services",
+      category: "Cloud",
+      color: "bg-orange-100 text-orange-600 dark:bg-orange-900 dark:text-orange-400",
+    },
+    {
+      name: "Algorithm & Data Structures with Python",
+      issuer: "Skilvull",
+      category: "Python",
+      color: "bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-400",
+    },
+    {
+      name: "Python Dasar",
+      issuer: "Skilvull",
+      category: "Python",
+      color: "bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-400",
+    },
+    {
+      name: "Python Lanjutan",
+      issuer: "Skilvull",
+      category: "Python",
+      color: "bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-400",
+    },
+    {
+      name: "Roadmap Web Developer",
+      issuer: "Geeksfarm",
+      category: "Web Dev",
+      color: "bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-400",
+    },
+    {
+      name: "Anggota Majelis Perwakilan Kelas",
+      issuer: "SMKN 13 Bandung",
+      category: "Organisasi",
+      color: "bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-400",
+    },
+    {
+      name: "Uji Level Kompetensi",
+      issuer: "SMKN 13 Bandung",
+      category: "Akademik",
+      color: "bg-yellow-100 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-400",
+    },
   ]
 
   const projects = [
@@ -416,6 +475,34 @@ export default function Home() {
                       </span>
                     </div>
                     <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{exp.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Certificates */}
+        <section id="certificates" className="py-24">
+          <div className="max-w-4xl mx-auto px-6">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+              <motion.h2 variants={fadeUp} className="text-3xl font-bold mb-2">Certificates</motion.h2>
+              <motion.div variants={fadeUp} className="w-12 h-1 bg-blue-500 mb-8 rounded"></motion.div>
+              <div className="grid md:grid-cols-2 gap-4">
+                {certificates.map((cert) => (
+                  <motion.div
+                    key={cert.name}
+                    variants={fadeUp}
+                    className="flex items-start gap-4 bg-white dark:bg-slate-700 rounded-xl p-5 border border-gray-100 dark:border-slate-600 shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="text-2xl">🏆</div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-sm mb-1">{cert.name}</h3>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs mb-2">{cert.issuer}</p>
+                      <span className={`text-xs px-2 py-1 rounded-full font-medium ${cert.color}`}>
+                        {cert.category}
+                      </span>
+                    </div>
                   </motion.div>
                 ))}
               </div>
