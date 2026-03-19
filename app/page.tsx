@@ -86,22 +86,23 @@ export default function Home() {
   const [showTop, setShowTop] = useState(false)
   const [loading, setLoading] = useState(true)
   const [scrollProgress, setScrollProgress] = useState(0)
-  const [cursor, setCursor] = useState({ x: 0, y: 0 })
-  const [cursorVisible, setCursorVisible] = useState(false)
 
   useEffect(() => {
     setMounted(true)
 
-    // Loading screen
     const timer = setTimeout(() => setLoading(false), 1800)
 
-    // Scroll events
     const handleScroll = () => {
       setShowTop(window.scrollY > 300)
       const total = document.documentElement.scrollHeight - window.innerHeight
       setScrollProgress((window.scrollY / total) * 100)
     }
     window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   const fadeUp = {
@@ -159,31 +160,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Custom Cursor */}
-      <motion.div
-        className="fixed top-0 left-0 z-[9999] pointer-events-none hidden md:block"
-        animate={{
-          x: cursor.x - 6,
-          y: cursor.y - 6,
-          opacity: cursorVisible ? 1 : 0,
-        }}
-        transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-      >
-        <div className="w-3 h-3 bg-blue-500 rounded-full" />
-      </motion.div>
-
-      <motion.div
-        className="fixed top-0 left-0 z-[9998] pointer-events-none hidden md:block"
-        animate={{
-          x: cursor.x - 20,
-          y: cursor.y - 20,
-          opacity: cursorVisible ? 0.3 : 0,
-        }}
-        transition={{ type: 'spring', stiffness: 150, damping: 20 }}
-      >
-        <div className="w-10 h-10 border-2 border-blue-500 rounded-full" />
-      </motion.div>
-
       {/* Loading Screen */}
       <AnimatePresence>
         {loading && (
@@ -199,7 +175,7 @@ export default function Home() {
               transition={{ duration: 0.4 }}
               className="text-4xl font-bold mb-6"
             >
-              Adly Febryan<span className="text-blue-500">.</span>
+              Adly<span className="text-blue-500">.</span>
             </motion.div>
             <div className="w-48 h-1 bg-gray-100 dark:bg-slate-700 rounded-full overflow-hidden">
               <motion.div
@@ -214,8 +190,8 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Scroll Progress Bar */}
-      <motion.div
-        className="fixed top-0 left-0 z-[9996] h-1 bg-blue-500"
+      <div
+        className="fixed top-0 left-0 z-[9996] h-1 bg-blue-500 transition-all duration-100"
         style={{ width: `${scrollProgress}%` }}
       />
 
@@ -316,23 +292,23 @@ export default function Home() {
               khususnya di bidang pengembangan web dan teknologi perangkat lunak.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
-            <a href="#projects" className="bg-blue-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-600 transition-colors">
-              Lihat Project
-            </a>
-            <a href="#contact" className="border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-medium hover:border-blue-500 hover:text-blue-500 transition-colors">
-              Hubungi Saya
-            </a>
-            <a
-              href="/cv-adly.pdf"
-              download
-              className="flex items-center gap-2 border border-blue-500 text-blue-500 px-6 py-3 rounded-lg font-medium hover:bg-blue-500 hover:text-white transition-colors"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Download CV
-            </a>
-          </motion.div>
+              <a href="#projects" className="bg-blue-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-600 transition-colors">
+                Lihat Project
+              </a>
+              <a href="#contact" className="border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-medium hover:border-blue-500 hover:text-blue-500 transition-colors">
+                Hubungi Saya
+              </a>
+              <a
+                href="/cv-adly.pdf"
+                download
+                className="flex items-center gap-2 border border-blue-500 text-blue-500 px-6 py-3 rounded-lg font-medium hover:bg-blue-500 hover:text-white transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download CV
+              </a>
+            </motion.div>
           </motion.div>
         </section>
 
@@ -482,7 +458,6 @@ export default function Home() {
                   <p className="text-gray-500 dark:text-gray-400 mb-6">
                     Tertarik untuk berkolaborasi atau sekadar ngobrol soal teknologi? Jangan ragu untuk menghubungi saya!
                   </p>
-                  
                   <div className="flex flex-wrap gap-3">
                     <a href="https://github.com/adly-248" target="_blank" className="flex items-center gap-2 border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium hover:border-blue-500 hover:text-blue-500 transition-colors">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -498,8 +473,6 @@ export default function Home() {
                     </a>
                   </div>
                 </motion.div>
-
-                {/* Contact Form */}
                 <motion.div variants={fadeUp}>
                   <ContactForm />
                 </motion.div>
