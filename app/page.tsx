@@ -4,6 +4,8 @@ import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
+import Particles, { initParticlesEngine } from '@tsparticles/react'
+import { loadSlim } from '@tsparticles/slim'
 
 function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -86,6 +88,16 @@ export default function Home() {
   const [showTop, setShowTop] = useState(false)
   const [loading, setLoading] = useState(true)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [particlesInit, setParticlesInit] = useState(false)
+
+useEffect(() => {
+  initParticlesEngine(async (engine) => {
+    await loadSlim(engine)
+  }).then(() => {
+  setParticlesInit(true)
+  console.log('particles ready!')
+})
+}, [])
 
   useEffect(() => {
     setMounted(true)
@@ -195,6 +207,44 @@ export default function Home() {
         style={{ width: `${scrollProgress}%` }}
       />
 
+      {/* Particles - Full Screen */}
+      {particlesInit && (
+        <Particles
+          id="tsparticles"
+          options={{
+            fpsLimit: 60,
+            particles: {
+              number: { value: 60 },
+              color: { value: '#3b82f6' },
+              opacity: { value: 0.6 },
+              size: { value: { min: 1, max: 3 } },
+              move: {
+                enable: true,
+                speed: 1,
+                direction: 'none',
+                random: true,
+                outModes: { default: 'out' },
+              },
+              links: {
+                enable: true,
+                color: '#3b82f6',
+                opacity: 0.4,
+                distance: 150,
+              },
+            },
+            interactivity: {
+              events: {
+                onHover: { enable: true, mode: 'repulse' },
+              },
+              modes: {
+                repulse: { distance: 100 },
+              },
+            },
+          }}
+          className="fixed inset-0 z-10 pointer-events-none"
+        />
+      )}
+
       <main className="min-h-screen bg-white dark:bg-slate-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
 
         {/* Navbar */}
@@ -274,7 +324,7 @@ export default function Home() {
         </nav>
 
         {/* Hero */}
-        <section className="max-w-4xl mx-auto px-6 pt-28 md:pt-40 pb-24">
+        <section className="relative overflow-hidden max-w-4xl mx-auto px-6 pt-28 md:pt-40 pb-24">
           <motion.div initial="hidden" animate="visible" variants={stagger}>
             <motion.p variants={fadeUp} className="text-blue-500 font-medium mb-3 text-sm tracking-widest uppercase">
               Halo, saya
