@@ -125,7 +125,7 @@ export default function Home() {
               transition={{ duration: 0.4 }}
               className="text-4xl font-bold mb-6"
             >
-              Adly<span className="text-blue-500">.</span>
+              Adly Febryan<span className="text-blue-500">.</span>
             </motion.div>
             <div className="w-48 h-1 bg-gray-100 dark:bg-slate-700 rounded-full overflow-hidden">
               <motion.div
