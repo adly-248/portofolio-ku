@@ -131,6 +131,13 @@ export default function Home() {
       description:
         "Membuat form berbasis HTML, Bootstrap, dan Jasper Report untuk keperluan sistem informasi rumah sakit. Terlibat langsung dalam proses implementasi software di lingkungan profesional.",
     },
+    {
+      company: "Majelis Perwakilan Kelas",
+      position: "Anggota Komisi B",
+      period: "2024 — 2025",
+      description:
+        "Mengelola dan menampung aspirasi ekstrakurikuler serta berperan sebagai penengah antara pihak eskul dan sekolah untuk menciptakan komunikasi yang harmonis.",
+    },
   ]
 
   const skills = [
@@ -153,6 +160,13 @@ export default function Home() {
       title: "Sistem Klinik Kesehatan",
       description:
         "Website manajemen klinik sederhana untuk pencatatan data pasien dan riwayat pemeriksaan.",
+      tech: ["Laravel", "MySQL", "Bootstrap"],
+      status: "Selesai",
+    },
+    {
+      title: "Sistem HRD",
+      description:
+        "Website manajemen sumber daya manusia yang mencakup fitur absensi karyawan, pengajuan cuti, dan perhitungan gaji secara otomatis.",
       tech: ["Laravel", "MySQL", "Bootstrap"],
       status: "Selesai",
     },
