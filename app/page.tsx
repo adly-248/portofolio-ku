@@ -146,7 +146,7 @@ export default function Home() {
     { name: "MySQL", level: 70 },
     { name: "HTML & CSS", level: 80 },
     { name: "Bootstrap", level: 70 },
-    { name: "Node.js", level: 40 },
+    { name: "Next.js", level: 40 },
     { name: "Python", level: 35 },
   ]
 
