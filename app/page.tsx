@@ -156,54 +156,63 @@ export default function Home() {
       issuer: "Amazon Web Services",
       category: "Cloud",
       color: "bg-orange-100 text-orange-600 dark:bg-orange-900 dark:text-orange-400",
+      img: "/certificates/aws-cloud.jpg",
     },
     {
       name: "Job Roles in the Cloud",
       issuer: "Amazon Web Services",
       category: "Cloud",
       color: "bg-orange-100 text-orange-600 dark:bg-orange-900 dark:text-orange-400",
+      img: "/certificates/aws-jobs.jpg",
     },
     {
       name: "Getting Started with Cloud Acquisition",
       issuer: "Amazon Web Services",
       category: "Cloud",
       color: "bg-orange-100 text-orange-600 dark:bg-orange-900 dark:text-orange-400",
+      img: "/certificates/aws-acq.jpg",
     },
     {
       name: "Algorithm & Data Structures with Python",
       issuer: "Skilvull",
       category: "Python",
       color: "bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-400",
+      img: "/certificates/skilvull-algo.jpg",
     },
     {
       name: "Python Dasar",
       issuer: "Skilvull",
       category: "Python",
       color: "bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-400",
+      img: "/certificates/skilvull-dasar.jpg",
     },
     {
       name: "Python Lanjutan",
       issuer: "Skilvull",
       category: "Python",
       color: "bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-400",
+      img: "/certificates/skilvull-lanjutan.jpg",
     },
     {
       name: "Roadmap Web Developer",
       issuer: "Geeksfarm",
       category: "Web Dev",
       color: "bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-400",
+      img: "/certificates/geeksfarm.jpg",
     },
     {
       name: "Anggota Majelis Perwakilan Kelas",
       issuer: "SMKN 13 Bandung",
       category: "Organisasi",
       color: "bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-400",
+      img: "/certificates/mpk.jpg",
     },
     {
       name: "Uji Level Kompetensi",
       issuer: "SMKN 13 Bandung",
       category: "Akademik",
       color: "bg-yellow-100 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-400",
+      img: "/certificates/ulk.jpg",
     },
   ]
 
@@ -488,20 +497,46 @@ export default function Home() {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
               <motion.h2 variants={fadeUp} className="text-3xl font-bold mb-2">Certificates</motion.h2>
               <motion.div variants={fadeUp} className="w-12 h-1 bg-blue-500 mb-8 rounded"></motion.div>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-6">
                 {certificates.map((cert) => (
                   <motion.div
                     key={cert.name}
                     variants={fadeUp}
-                    className="flex items-start gap-4 bg-white dark:bg-slate-700 rounded-xl p-5 border border-gray-100 dark:border-slate-600 shadow-sm hover:shadow-md transition-shadow"
+                    className="bg-white dark:bg-slate-700 rounded-xl border border-gray-100 dark:border-slate-600 shadow-sm hover:shadow-md transition-shadow overflow-hidden"
                   >
-                    <div className="text-2xl">🏆</div>
-                    <div className="flex-1">
-                      <h3 className="font-bold text-sm mb-1">{cert.name}</h3>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs mb-2">{cert.issuer}</p>
-                      <span className={`text-xs px-2 py-1 rounded-full font-medium ${cert.color}`}>
-                        {cert.category}
-                      </span>
+                    {/* Gambar Sertifikat */}
+                    <a href={cert.img} target="_blank" rel="noopener noreferrer">
+                      <div className="w-full h-64 bg-gray-50 dark:bg-slate-800 overflow-hidden">
+                        <img
+                          src={cert.img}
+                          alt={cert.name}
+                          className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    </a>
+
+                    {/* Info */}
+                    <div className="p-4 flex items-center justify-between gap-3">
+                      <div>
+                        <h3 className="font-bold text-sm mb-1">{cert.name}</h3>
+                        <p className="text-gray-500 dark:text-gray-400 text-xs">{cert.issuer}</p>
+                      </div>
+                      <div className="flex flex-col items-end gap-2 shrink-0">
+                        <span className={`text-xs px-2 py-1 rounded-full font-medium ${cert.color}`}>
+                          {cert.category}
+                        </span>
+                        <a
+                          href={cert.img}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-xs bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded-lg font-medium transition-colors"
+                        >
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Lihat Fullscreen
+                        </a>
+                      </div>
                     </div>
                   </motion.div>
                 ))}
