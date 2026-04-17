@@ -394,41 +394,70 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* About */}
+        {/* About Section */}
         <section id="about" className="bg-gray-50 dark:bg-slate-800 py-24 transition-colors duration-300">
-          <div className="max-w-4xl mx-auto px-6">
+          <div className="max-w-5xl mx-auto px-6">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
               <motion.h2 variants={fadeUp} className="text-3xl font-bold mb-2">About Me</motion.h2>
-              <motion.div variants={fadeUp} className="w-12 h-1 bg-blue-500 mb-8 rounded"></motion.div>
-              <motion.div variants={fadeUp} className="grid md:grid-cols-3 gap-12 items-center">
-                <div className="flex justify-center">
-                  <img src="/adly.jpeg" alt="Adly Febryan" className="w-48 h-48 rounded-full object-cover border-4 border-blue-100 dark:border-slate-600 shadow-md" />
+              <motion.div variants={fadeUp} className="w-12 h-1 bg-blue-600 mb-10 rounded"></motion.div>
+              
+              <motion.div variants={fadeUp} className="grid md:grid-cols-12 gap-12 items-start">
+                {/* Profile Image */}
+                <div className="md:col-span-4 flex justify-center">
+                  <div className="relative">
+                    <img 
+                      src="/adly.jpeg" 
+                      alt="Adly Febryan" 
+                      className="w-56 h-56 rounded-2xl object-cover border-2 border-white dark:border-slate-700 shadow-xl" 
+                    />
+                    {/* Dekorasi Aksen */}
+                    <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-blue-500/10 rounded-full blur-2xl -z-10"></div>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                    Saya adalah siswa <strong>SMK 13 Bandung</strong> jurusan{" "}
-                    <strong>Rekayasa Perangkat Lunak</strong> yang saat ini sedang menjalani PKL (Praktik Kerja Lapangan).
+
+                {/* Professional Bio */}
+                <div className="md:col-span-5">
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-lg">
+                    Halo, saya <span className="text-blue-600 dark:text-blue-400 font-semibold">Adly Febryan</span>. 
+                    Seorang pengembang perangkat lunak yang berfokus pada solusi web modern dan efisien.
                   </p>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Saya memiliki ketertarikan besar di dunia <strong>web development</strong> dan selalu antusias mempelajari teknologi-teknologi baru.
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                    Saat ini, saya sedang menempuh pendidikan di <strong>SMK Negeri 13 Bandung</strong> jurusan 
+                    <strong> Rekayasa Perangkat Lunak</strong>. Saya memiliki dedikasi tinggi dalam membangun 
+                    aplikasi yang tidak hanya fungsional, tetapi juga memiliki pengalaman pengguna yang optimal.
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed italic">
+                    "Berkomitmen untuk terus mengeksplorasi teknologi terbaru dan menerapkannya dalam proyek nyata."
                   </p>
                 </div>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <span className="text-blue-500">📍</span>
-                    <span className="text-gray-600 dark:text-gray-300">Bandung, Indonesia</span>
+
+                {/* Quick Info / Details */}
+                <div className="md:col-span-3 space-y-4 bg-white dark:bg-slate-700/50 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700">
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 bg-blue-50 dark:bg-slate-800 rounded-lg text-blue-600">📍</div>
+                    <div>
+                      <p className="text-xs text-gray-400 uppercase tracking-wider">Location</p>
+                      <p className="text-sm font-medium dark:text-gray-200">Bandung, Indonesia</p>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-blue-500">🎓</span>
-                    <span className="text-gray-600 dark:text-gray-300">SMK 13 Bandung — RPL</span>
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 bg-blue-50 dark:bg-slate-800 rounded-lg text-blue-600">🎓</div>
+                    <div>
+                      <p className="text-xs text-gray-400 uppercase tracking-wider">Education</p>
+                      <p className="text-sm font-medium dark:text-gray-200">SMKN 13 Bandung — RPL</p>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-blue-500">💼</span>
-                    <span className="text-gray-600 dark:text-gray-300">Sedang PKL</span>
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 bg-blue-50 dark:bg-slate-800 rounded-lg text-blue-600">💼</div>
+                    <div>
+                      <p className="text-xs text-gray-400 uppercase tracking-wider">Current Status</p>
+                      <p className="text-sm font-medium dark:text-gray-200">Internship (PKL)</p>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-blue-500">🚀</span>
-                    <span className="text-gray-600 dark:text-gray-300">Open to opportunities</span>
+                  <div className="pt-2">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                      ● Open to Opportunities
+                    </span>
                   </div>
                 </div>
               </motion.div>
