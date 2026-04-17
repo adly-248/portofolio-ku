@@ -646,9 +646,26 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="border-t border-gray-100 dark:border-slate-700 py-6 text-center text-sm text-gray-400 dark:text-gray-500">
-          © 2026 Adly Febryan. Made with Next.js & Tailwind CSS.
+        {/* Footer Section */}
+        <footer className="border-t border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 transition-colors duration-300">
+          <div className="max-w-5xl mx-auto px-6 py-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              
+              {/* Copyright Information */}
+              <p className="text-xs text-gray-400 dark:text-gray-500 tracking-widest uppercase font-medium">
+                © {new Date().getFullYear()} ADLY FEBRYAN. ALL RIGHTS RESERVED.
+              </p>
+
+              {/* Tech Stack Info */}
+              <div className="flex items-center gap-1.5 text-xs text-gray-400 dark:text-gray-500">
+                <span>Built with</span>
+                <span className="font-semibold text-gray-700 dark:text-gray-300">Next.js</span>
+                <span>&</span>
+                <span className="font-semibold text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+              </div>
+
+            </div>
+          </div>
         </footer>
 
         {/* Back to Top */}
