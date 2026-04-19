@@ -146,7 +146,8 @@ export default function Home() {
     { name: "MySQL", level: 70 },
     { name: "HTML & CSS", level: 80 },
     { name: "Bootstrap", level: 70 },
-    { name: "Next.js", level: 40 },
+    { name: "Next.js", level: 25 },
+    { name: "Vue.js", level: 20 },
     { name: "Python", level: 35 },
   ]
 
@@ -237,6 +238,13 @@ export default function Home() {
         "Website manajemen sumber daya manusia yang mencakup fitur absensi karyawan, pengajuan cuti, dan perhitungan gaji secara otomatis.",
       tech: ["Laravel", "MySQL", "Bootstrap"],
       status: "Selesai",
+    },
+    {
+      title: "Sistem Manajemen Cafe",
+      description:
+        "Aplikasi manajemen cafe dengan dua tampilan — Admin untuk mengelola menu, pesanan, dan laporan, serta User untuk melihat menu dan melakukan pemesanan secara digital.",
+      tech: ["Laravel", "MySQL", "Vue.js"],
+      status: "Dalam Pengerjaan",
     },
   ]
 
