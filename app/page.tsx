@@ -602,9 +602,9 @@ export default function Home() {
                     variants={fadeUp}
                     className="bg-white dark:bg-slate-700 rounded-xl p-6 border border-gray-100 dark:border-slate-600 shadow-sm hover:shadow-md transition-shadow"
                   >
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="font-bold text-lg">{project.title}</h3>
-                      <span className={`text-xs px-2 py-1 rounded-full font-medium ${
+                    <div className="flex justify-between items-start gap-2 mb-3">
+                      <h3 className="font-bold text-lg leading-tight">{project.title}</h3>
+                      <span className={`text-xs px-2 py-1 rounded-full font-medium shrink-0 ${
                         project.status === "Selesai"
                           ? "bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-400"
                           : "bg-yellow-100 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-400"
