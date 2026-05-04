@@ -126,18 +126,25 @@ export default function Home() {
 
   const experiences = [
     {
-      company: "PT Pandawa Yogaswara Abadi Teknologi",
-      position: "Implementor",
-      period: "November 2025 — Sekarang",
-      description:
-        "Membuat form berbasis HTML, Bootstrap, dan Jasper Report untuk keperluan sistem informasi rumah sakit. Terlibat langsung dalam proses implementasi software di lingkungan profesional.",
-    },
-    {
       company: "Majelis Perwakilan Kelas",
       position: "Anggota Komisi B",
       period: "2024 — 2025",
       description:
         "Mengelola dan menampung aspirasi ekstrakurikuler serta berperan sebagai penengah antara pihak eskul dan sekolah untuk menciptakan komunikasi yang harmonis.",
+    },
+    {
+      company: "Karang Taruna",
+      position: "Anggota Karang Taruna",
+      period: "2024 — Sekarang",
+      description:
+        "Aktif berpartisipasi dalam kegiatan kepemudaan di lingkungan sekitar, termasuk membantu persiapan dan pelaksanaan lomba 17 Agustus serta malam puncak perayaan kemerdekaan.",
+    },
+    {
+      company: "PT Pandawa Yogaswara Abadi Teknologi",
+      position: "Implementor",
+      period: "November 2025 — Sekarang",
+      description:
+        "Membuat form berbasis HTML, Bootstrap, dan Jasper Report untuk keperluan sistem informasi rumah sakit. Terlibat langsung dalam proses implementasi software di lingkungan profesional.",
     },
   ]
 
@@ -474,6 +481,22 @@ export default function Home() {
                       ● Open to Opportunities
                     </span>
                   </div>
+                  <div className="flex items-center gap-4">
+                  <div className="p-2 bg-blue-50 dark:bg-slate-800 rounded-lg text-blue-600">🕌</div>
+                  <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wider">Karya & Proses</p>
+                    <a
+                      href="https://www.instagram.com/reminddiri.co?igsh=MXFwbGlldWpiMnIxYg=="
+                      target="_blank"
+                      className="text-sm font-medium text-blue-500 hover:underline"
+                    >
+                      @reminddiri
+                    </a>
+                    <p className="text-xs text-gray-400 mt-0.5 italic">
+                      Catatan kecil dari setiap proses yang saya pelajari
+                    </p>
+                  </div>
+                </div>
                 </div>
               </motion.div>
             </motion.div>
