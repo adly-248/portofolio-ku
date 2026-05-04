@@ -215,6 +215,13 @@ export default function Home() {
       color: "bg-yellow-100 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-400",
       img: "/certificates/ulk.jpg",
     },
+    {
+      name: "Praktik Kerja Lapangan (PKL)",
+      issuer: "PT Pandawa Yogaswara Abadi Teknologi",
+      category: "PKL",
+      color: "bg-teal-100 text-teal-600 dark:bg-teal-900 dark:text-teal-400",
+      img: "/certificates/pkl.jpg",
+    },
   ]
 
   const projects = [
