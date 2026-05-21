@@ -144,7 +144,7 @@ export default function Home() {
       position: "Implementor",
       period: "November 2025 — Sekarang",
       description:
-        "Membuat form berbasis HTML, Bootstrap, dan Jasper Report untuk keperluan sistem informasi rumah sakit. Terlibat langsung dalam proses implementasi software di lingkungan profesional.",
+        "Mengembangkan form rawat jalan dan laporan rumah sakit menggunakan HTML, Bootstrap, dan JasperReport serta membantu proses implementasi sistem di lingkungan client secara langsung.",
     },
   ]
 
@@ -399,8 +399,7 @@ export default function Home() {
               />
             </motion.h1>
             <motion.p variants={fadeUp} className="text-xl text-gray-500 dark:text-gray-400 mb-8 max-w-xl">
-              Siswa SMK produktif yang sedang menjalani PKL dengan semangat belajar tinggi,
-              khususnya di bidang pengembangan web dan teknologi perangkat lunak.
+              Web Developer yang fokus membangun sistem modern dan pengalaman digital yang sederhana namun elegan. Senang mengubah ide menjadi solusi nyata melalui kode.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
               <a href="#projects" className="bg-blue-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-600 transition-colors">
@@ -666,8 +665,12 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-12">
                 <motion.div variants={fadeUp}>
                   <p className="text-gray-500 dark:text-gray-400 mb-6">
-                    Tertarik untuk berkolaborasi atau sekadar ngobrol soal teknologi? Jangan ragu untuk menghubungi saya!
+                    Saat ini terbuka untuk freelance project, kolaborasi, atau pengalaman baru di bidang web development. Jangan ragu untuk menghubungi saya!
                   </p>
+                  <div className="flex items-center gap-2 mb-6">
+                    <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <span className="text-sm text-green-500 font-medium">Available for work</span>
+                  </div>
                   <div className="flex flex-wrap gap-3">
                     <a href="https://github.com/adly-248" target="_blank" className="flex items-center gap-2 border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium hover:border-blue-500 hover:text-blue-500 transition-colors">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
