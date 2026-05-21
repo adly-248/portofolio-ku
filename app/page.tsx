@@ -260,6 +260,13 @@ export default function Home() {
       tech: ["Laravel", "MySQL", "Vue.js"],
       status: "Dalam Pengerjaan",
     },
+    {
+      title: "Website Wisuda SMKN 13 Bandung",
+      description:
+        "Website wisuda SMKN 13 Bandung yang dibuat untuk memudahkan akses informasi acara, daftar peserta, dokumentasi, serta fitur digital pendukung wisuda dengan tampilan modern dan responsif.",
+      tech: ["Nuxt.js"],
+      status: "Dalam Pengerjaan",
+    },
   ]
 
   return (
