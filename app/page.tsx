@@ -238,6 +238,7 @@ export default function Home() {
         "Website manajemen keuangan sekolah yang memudahkan pencatatan pemasukan, pengeluaran, dan laporan keuangan secara digital.",
       tech: ["Laravel", "MySQL", "Bootstrap"],
       status: "Selesai",
+      image: "/projects/bendahara.png",
     },
     {
       title: "Sistem Klinik Kesehatan",
@@ -245,6 +246,7 @@ export default function Home() {
         "Website manajemen klinik sederhana untuk pencatatan data pasien dan riwayat pemeriksaan.",
       tech: ["Laravel", "MySQL", "Bootstrap"],
       status: "Selesai",
+      image: "/projects/klinik.png",
     },
     {
       title: "Sistem HRD",
@@ -252,6 +254,7 @@ export default function Home() {
         "Website manajemen sumber daya manusia yang mencakup fitur absensi karyawan, pengajuan cuti, dan perhitungan gaji secara otomatis.",
       tech: ["Laravel", "MySQL", "Bootstrap"],
       status: "Selesai",
+      image: "/projects/hrd.png",
     },
     {
       title: "Sistem Manajemen Cafe",
@@ -629,25 +632,40 @@ export default function Home() {
                   <motion.div
                     key={project.title}
                     variants={fadeUp}
-                    className="bg-white dark:bg-slate-700 rounded-xl p-6 border border-gray-100 dark:border-slate-600 shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <div className="flex justify-between items-start gap-2 mb-3">
-                      <h3 className="font-bold text-lg leading-tight">{project.title}</h3>
-                      <span className={`text-xs px-2 py-1 rounded-full font-medium shrink-0 ${
-                        project.status === "Selesai"
-                          ? "bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-400"
-                          : "bg-yellow-100 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-400"
-                      }`}>
-                        {project.status}
-                      </span>
-                    </div>
-                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((t) => (
-                        <span key={t} className="text-xs bg-blue-50 dark:bg-blue-900 text-blue-500 dark:text-blue-300 px-3 py-1 rounded-full font-medium">
-                          {t}
+                    className="bg-white dark:bg-slate-700 rounded-xl border border-gray-100 dark:border-slate-600 shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+                    >
+                    {project.image ? (
+                      <div className="w-full h-48 overflow-hidden bg-gray-50 dark:bg-slate-800">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-full h-48 bg-gray-50 dark:bg-slate-800 flex items-center justify-center">
+                        <span className="text-gray-300 dark:text-slate-600 text-sm">Preview coming soon</span>
+                      </div>
+                    )}
+                    <div className="p-6">
+                      <div className="flex justify-between items-start gap-2 mb-3">
+                        <h3 className="font-bold text-lg leading-tight">{project.title}</h3>
+                        <span className={`text-xs px-2 py-1 rounded-full font-medium shrink-0 ${
+                          project.status === "Selesai"
+                            ? "bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-400"
+                            : "bg-yellow-100 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-400"
+                        }`}>
+                          {project.status}
                         </span>
-                      ))}
+                      </div>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">{project.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((t) => (
+                          <span key={t} className="text-xs bg-blue-50 dark:bg-blue-900 text-blue-500 dark:text-blue-300 px-3 py-1 rounded-full font-medium">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </motion.div>
                 ))}
