@@ -412,7 +412,7 @@ export default function Home() {
                 Hubungi Saya
               </a>
               <a
-                href="/cv-adly2.pdf"
+                href="/cv-adly3.pdf"
                 download
                 className="flex items-center gap-2 border border-blue-500 text-blue-500 px-6 py-3 rounded-lg font-medium hover:bg-blue-500 hover:text-white transition-colors"
               >
